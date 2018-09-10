@@ -7,7 +7,7 @@ before_script:
 - chmod 600 ~/.ssh/id_ed25519
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
-- git clone -b release https://github.com/heavywatal/json.git release
+- git clone -b release git@github.com:heavywatal/json.git release
 - cp -a src/json_fwd.hpp src/json.hpp LICENSE.MIT README.md release/
 - cd release/
 - git add --all
