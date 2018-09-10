@@ -1,0 +1,18 @@
+language: cpp
+sudo: false
+script:
+- mkdir release
+- cp -a src/json_fwd.hpp src/json.hpp LICENSE.MIT README.md release/
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_TOKEN
+  local-dir: release
+  target-branch: release
+  on:
+    branch: travis
+branches:
+  only: travis
+notifications:
+  email: false
